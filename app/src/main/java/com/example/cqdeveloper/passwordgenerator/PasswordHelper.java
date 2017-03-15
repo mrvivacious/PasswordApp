@@ -3,7 +3,7 @@ package com.example.cqdeveloper.passwordgenerator;
 import java.util.Random;
 
 /**
- * Created by cqdeveloper on 3/14/17.
+ * Created by vbhook2 on 3/14/17.
  */
 
 public class PasswordHelper {
