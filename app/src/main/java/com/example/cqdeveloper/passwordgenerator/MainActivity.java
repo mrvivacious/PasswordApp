@@ -9,9 +9,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Random;
-//?? Test cases
-
 public class MainActivity extends AppCompatActivity {
 
     private Button passwordGenerator;
@@ -47,10 +44,11 @@ public class MainActivity extends AppCompatActivity {
                 int length = 0;
                 int num_chars;
                 int num_numbers;
+                int max_password_length = 30;
                 boolean password_has_length = false;
                 boolean reasonable_lengths = false;
 
-
+                //Can't make a password if we don't have a length
                 if (rawLength.matches("")) {
                     Toast.makeText(getApplicationContext(), "Please enter a password length", Toast.LENGTH_SHORT).show();
                 }
@@ -59,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
                     password_has_length = true;
                 }
 
-                if (password_has_length && length <= 30) {
+                //Checks for inputted values. Otherwise, defaults to zero
+                if (password_has_length && length <= max_password_length) {
                     if (rawNum_chars.matches("")) {
                         num_chars = 0;
                     }
@@ -84,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     if (reasonable_lengths) {
-                        int num_letters = length - (num_chars + num_numbers);
                         String generated_password = "";
 
                         generated_password = PasswordHelper.generatePassword(length, num_chars, num_numbers);
@@ -92,7 +90,8 @@ public class MainActivity extends AppCompatActivity {
                         password.setText(generated_password);
                     }
                 }
-                else {
+                //If length exceeds our max length, display troubleshooting message
+                else if(password_has_length) {
                     Toast.makeText(getApplicationContext(), "Password cannot exceed 30 characters", Toast.LENGTH_SHORT).show();
                 }
             }
