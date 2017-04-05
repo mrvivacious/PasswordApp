@@ -1,6 +1,8 @@
 package com.example.cqdeveloper.passwordgenerator;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button passwordGenerator;
     private Button copyPassword;
+    private Button buttonAccounts;
     private EditText password_length;
     private EditText number_of_chars;
     private EditText number_of_numbers;
@@ -21,11 +24,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         passwordGenerator = (Button) findViewById(R.id.generate);
         copyPassword = (Button) findViewById(R.id.copy);
+        buttonAccounts = (Button) findViewById(R.id.buttonAccounts);
 
         password_length = (EditText) findViewById(R.id.password_length);
         number_of_chars = (EditText) findViewById(R.id.number_of_chars);
@@ -94,6 +99,17 @@ public class MainActivity extends AppCompatActivity {
                 else if(password_has_length) {
                     Toast.makeText(getApplicationContext(), "Password cannot exceed 30 characters", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        //Switch to Account screen, where user can create instances of account information
+        //Example, ACC: Google | Username: firstname@gmail.com | Password: iceCream
+        buttonAccounts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.account_list);
+                Intent accountScreen = new Intent(MainActivity.this, AccountActivity.class);
+                startActivity(accountScreen);
             }
         });
 

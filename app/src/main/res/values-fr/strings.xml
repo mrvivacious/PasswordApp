@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Password</string>
+    <string name="accounts">Mots de passe stockés</string>
+    <string name="copy">Copier dans le presse-papier</string>
+    <string name="generate">Créer un mot de passe</string>
+    <string name="number_of_chars">Nombre de caractères spéciaux:</string>
+    <string name="number_of_numbers">Nombre de chiffres:</string>
+    <string name="password_length">Durée du mot de passe:</string>
+    <string name="welcome_message">Créez un mot de passe aléatoire avec vos propres spécifications:</string>
+</resources>
