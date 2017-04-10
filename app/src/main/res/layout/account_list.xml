@@ -1,40 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <ScrollView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
-    <ListView
-        android:id="@+id/listViewAccounts"
-        android:layout_alignParentTop="true"
-        android:layout_above="@+id/linearLayoutMenu"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </ListView>
-    </ScrollView>
+    android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:id="@id/linearLayoutMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:weightSum="2.0">
-        <Button
-            android:id="@+id/buttonGenerate"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:text="@string/generate"/>
-        <Button
-            android:id="@+id/buttonAccounts"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:text="@string/accounts"/>
-    </LinearLayout>
+    <!-- Note that what follows is slightly different from lecture.  To get the TextViews to
+        fill the space up to but not into the edges, I've set their width to 0dp.  This is the
+        way to do it in the most recent version of ConstraintLayout -->
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="351dp"
+        android:layout_height="26dp"
+        tools:text="Name of the account"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginStart= "16dp"
+        tools:layout_editor_absoluteY="15dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        tools:layout_editor_absoluteX="27dp" />
+
+    <!-- using 'tools' instead of 'android' below provides the dummy text for use in
+            Android studio, but doesn't include it when you build the App. -->
+
+    <TextView
+        android:id="@+id/authorTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="-17dp"
+        tools:text="Password"
+        android:textStyle="italic"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        android:layout_marginStart="30dp" />
+
+
+</android.support.constraint.ConstraintLayout>
+

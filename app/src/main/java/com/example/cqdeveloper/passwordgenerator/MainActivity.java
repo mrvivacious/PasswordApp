@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button passwordGenerator;
     private Button copyPassword;
-    private Button buttonAccounts;
+    private Button storedPasswords;
     private EditText password_length;
     private EditText number_of_chars;
     private EditText number_of_numbers;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         passwordGenerator = (Button) findViewById(R.id.generate);
         copyPassword = (Button) findViewById(R.id.copy);
-        buttonAccounts = (Button) findViewById(R.id.buttonAccounts);
+        storedPasswords = (Button) findViewById(R.id.storedPasswords);
 
         password_length = (EditText) findViewById(R.id.password_length);
         number_of_chars = (EditText) findViewById(R.id.number_of_chars);
@@ -104,12 +104,12 @@ public class MainActivity extends AppCompatActivity {
 
         //Switch to Account screen, where user can create instances of account information
         //Example, ACC: Google | Username: firstname@gmail.com | Password: iceCream
-        buttonAccounts.setOnClickListener(new View.OnClickListener() {
+        storedPasswords.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setContentView(R.layout.account_list);
-                Intent accountScreen = new Intent(MainActivity.this, AccountActivity.class);
-                startActivity(accountScreen);
+                Intent accountScreen = new Intent(v.getContext(), AccountActivity.class);
+//                startActivity(accountScreen);
             }
         });
 
