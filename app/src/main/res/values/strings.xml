@@ -1,9 +1,11 @@
 <resources>
-    <string name="app_name">Password</string>
+    <string name="app_name" translatable="false">Password</string>
     <string name="welcome_message">Create a random password with your own specifications:</string>
     <string name="password_length">Length of password: </string>
     <string name="number_of_chars">Number of special characters: </string>
     <string name="number_of_numbers">Number of numerical digits: </string>
     <string name="generate">Generate password</string>
     <string name="copy">Copy to clipboard</string>
+    <string name="accounts">Stored passwords</string>
+    <string name="password_generator">Password generator</string>
 </resources>
