@@ -3,8 +3,8 @@ package com.example.cqdeveloper.passwordgenerator;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -107,9 +107,9 @@ public class MainActivity extends AppCompatActivity {
         storedPasswords.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setContentView(R.layout.account_list);
                 Intent accountScreen = new Intent(v.getContext(), AccountActivity.class);
-//                startActivity(accountScreen);
+                startActivity(accountScreen);
+
             }
         });
 

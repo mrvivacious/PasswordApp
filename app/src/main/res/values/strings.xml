@@ -7,4 +7,5 @@
     <string name="generate">Generate password</string>
     <string name="copy">Copy to clipboard</string>
     <string name="accounts">Stored passwords</string>
+    <string name="password_generator">Password generator</string>
 </resources>
